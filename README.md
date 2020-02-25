@@ -1,5 +1,5 @@
-# DS
-## Desarrollo de Software - Ingeniería del Software
+# Desarrollo de Software - Ingeniería del Software
+## Miguel Ángel Campos Cubillas
 ### Práctica 1
 #### Uso de 4 patrones de diseño en orientación a objetos
 - Aplicar tres patrones creacionales entendiendo las relaciones entre los mismos
