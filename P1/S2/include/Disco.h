@@ -17,10 +17,8 @@ using namespace std;
 // Clase Disco
 class Disco : public ComponenteEquipo {
 	
-	public void virtual aceptar (VisitanteEquipo ve){
-		ve.visitarDisco(this);
-	}
+	public void virtual aceptar (VisitanteDisco vd);
 
-}
+};
 
 #endif /* _DISCO_H_ */

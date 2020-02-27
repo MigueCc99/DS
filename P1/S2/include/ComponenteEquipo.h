@@ -16,11 +16,13 @@ using namespace std;
 
 // Clase ComponenteEquipo
 class ComponenteEquipo {
-	string nombre;
-	int precio;
+	private string nombre;
+	private int precio;
 
+	int getPrecio();
+	string getNombre();
 	public virtual void aceptar (VisitanteEquipo ve);
 
-}
+};
 
 #endif /* _COMPONENTEEQUIPO_H_ */

@@ -8,16 +8,21 @@
  * @email miguecc99@correo.ugr.es
  * 
  */
-#ifndef _VISITANTEEQUIPO_H_
-#define _VISITANTEEQUIPO_H_
+#ifndef _VISITANTEPRECIODETALLE_H_
+#define _VISITANTEPRECIODETALLE_H_
 
+#include <string>
+using namespace std;
 
+// Clase VisitantePrecioDetalle
+class VisitantePrecioDetalle : VisitanteEquipo {
+	string detalle;
 
-// Clase VisitanteEquipo
-class VisitanteEquipo {
+	VisitantePrecioDetalle ();
 	public virtual void visitarDisco (Disco d);
 	public virtual void visitarTarjeta (Tarjeta t);
 	public virtual void visitarBus (Bus b);
-}
+	string getPrecioDetalle();
+};
 
-#endif /* _VISITANTEEQUIPO_H_ */
+#endif /* _VISITANTEPRECIODETALLE_H_ */
