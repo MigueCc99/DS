@@ -12,7 +12,7 @@
 #define _TARJETA_H_
 
 #include "ComponenteEquipo.cpp"
-#include "VisitanteTarjeta.h"
+#include "VisitanteEquipo.h"
 using namespace std;
 
 // Clase Tarjeta

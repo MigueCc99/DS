@@ -12,7 +12,7 @@
 #define _DISCO_H_
 
 #include "ComponenteEquipo.cpp"
-#include "VisitanteDisco.h"
+#include "VisitanteEquipo.h"
 using namespace std;
 
 // Clase Disco

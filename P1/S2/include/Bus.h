@@ -12,7 +12,7 @@
 #define _BUS_H_
 
 #include "ComponenteEquipo.cpp"
-#include "VisitanteBus.h"
+#include "VisitanteEquipo.h"
 using namespace std;
 
 // Clase Bus
