@@ -6,9 +6,9 @@ Equipo::Equipo (vector<ComponenteEquipo> componentes){
 	this->componentes = componentes;
 }
 
-void Equipo::visitarComponentes () {
+void Equipo::visitarComponentes (VisitanteEquipo ve) {
 	for(int i=0; i<componentes.size(); i++)
-		componente(i).aceptar();
+		componente(i).aceptar(ve);
 }
 
 int Equipo::getNumComponentes (){

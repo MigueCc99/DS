@@ -21,7 +21,7 @@ class Equipo {
 
 	Equipo ();
 	Equipo (vector<ComponenteEquipo> componentes);
-	void visitarComponentes ();
+	void visitarComponentes (VisitanteEquipo ve);
 	int getNumComponentes ();
 	ComponenteEquipo getComponente(int i);
 };
