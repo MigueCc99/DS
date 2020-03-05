@@ -1,5 +1,5 @@
 #include "Bus.h"
 
-public void virtual Bus::aceptar (VisitanteBus vb){
-		vb.visitarBus(this);
+public void Bus::aceptar (VisitanteEquipo ve){
+		ve.visitarBus(this);
 }

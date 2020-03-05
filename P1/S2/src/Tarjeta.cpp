@@ -1,5 +1,5 @@
 #include "Tarjeta.h"
 
-public void virtual Tarjeta::aceptar (VisitanteTarjeta vt){
-	vt.aceptar(this); 
+public void Tarjeta::aceptar (VisitanteEquipo ve){
+	ve.aceptar(this);
 }

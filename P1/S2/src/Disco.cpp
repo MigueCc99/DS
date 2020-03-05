@@ -1,5 +1,5 @@
 #include "Disco.h"
 
-public void virtual Disco::aceptar (VisitanteDisco vd){
+public void Disco::aceptar (VisitanteEquipo ve){
 	ve.visitarDisco(this);
 }
