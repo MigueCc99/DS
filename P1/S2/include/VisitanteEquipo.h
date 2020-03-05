@@ -16,6 +16,7 @@ class VisitanteEquipo {
 	public virtual void visitarDisco (Disco d) = 0;
 	public virtual void visitarTarjeta (Tarjeta t) = 0;
 	public virtual void visitarBus (Bus b) = 0;
+	public virtual void reiniciarVisitante ();
 };
 
 #endif /* _VISITANTEEQUIPO_H_ */

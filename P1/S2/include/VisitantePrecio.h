@@ -19,6 +19,7 @@ class VisitantePrecio : VisitanteEquipo {
 	public void visitarDisco (Disco d);
 	public void visitarTarjeta (Tarjeta t);
 	public void visitarBus (Bus b);
+	public void reiniciarVisitante ();
 	int getPrecio();
 };
 

@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Equipo.h"
+#include "VisitanteEquipo.h"
 using namespace std;
 
 
@@ -41,7 +42,29 @@ int main (int argc, char argv[]) {
 
   Equipo equipo3 (componentes);
 
-  
+  VisitantePrecio vp ();
+  VisitantePrecioDetalle vpd ();
 
+  equipo1.visitarComponentes (vp);
+  equipo1.visitarComponentes (vpd);
 
+  cout << "Equipo 1\n" << "Precio Total: " << vp.getPrecio() << endl << "Precio Detalle: " << vpd.getPrecioDetalle();
+
+  vp.reiniciarVisitante();
+  vpe.reiniciarVisitante();
+
+  equipo2.visitarComponentes (vp);
+  equipo2.visitarComponentes (vpd);
+
+  cout << "Equipo 2\n" << "Precio Total: " << vp.getPrecio() << endl << "Precio Detalle: " << vpd.getPrecioDetalle();
+
+  vp.reiniciarVisitante();
+  vpe.reiniciarVisitante();
+
+  equipo3.visitarComponentes (vp);
+  equipo3.visitarComponentes (vpd);
+
+  cout << "Equipo 3\n" << "Precio Total: " << vp.getPrecio() << endl << "Precio Detalle: " << vpd.getPrecioDetalle();
+
+  return 0;
 }
