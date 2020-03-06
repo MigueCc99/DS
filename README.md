@@ -7,3 +7,6 @@
 - Aplicar un patrón conductual
 - Usar una librería OO para GUI con otro patrón conductual
 - Usar patrones combinados de diseño
+#### Sesión 1
+
+#### Sesión 2
