@@ -1,22 +1,27 @@
 #include <iostream>
 #include "Equipo.h"
-#include "VisitanteEquipo.h"
+#include "ComponenteEquipo.h"
+#include "VisitantePrecio.h"
+#include "VisitantePrecioDetalle.h"
+#include "Bus.h"
+#include "Disco.h"
+#include "Tarjeta.h"
 using namespace std;
 
 
-int main (int argc, char argv[]) {
+int main (int argc, char *argv[]) {
 
   Disco disco1 ("SEAGATE BARRACUDA", 100);
   Disco disco2 ("KINGSTON A400", 50);
   Disco disco3 ("TOSHIBA OCZ", 40);
 
   Bus bus1 ("PCIEXPRESS1", 15);
-  Bus bus2 ("PCIEXPRESS1", 20);
-  Bus bus3 ("PCIEXPRESS1", 30);
+  Bus bus2 ("PCIEXPRESS2", 20);
+  Bus bus3 ("PCIEXPRESS3", 30);
 
   Tarjeta tarjeta1 ("NVIDIA", 400);
   Tarjeta tarjeta2 ("AMD", 300);
-  Tarjeta tarjeta3 ("INTEL" 150);
+  Tarjeta tarjeta3 ("INTEL", 150);
 
   vector <ComponenteEquipo> componentes;
 
@@ -44,28 +49,43 @@ int main (int argc, char argv[]) {
 
   VisitantePrecio vp ();
   VisitantePrecioDetalle vpd ();
-
-  equipo1.visitarComponentes (vp);
-  equipo1.visitarComponentes (vpd);
+  
+  ComponenteEquipo ce ();
+/*
+  for(int i=0; i<equipo1.getNumComponentes(); i++){
+    ce = equipo1.getComponente(i);
+    ce.aceptar(vp);
+    ce.aceptar(vpd);
+  }
 
   cout << "Equipo 1\n" << "Precio Total: " << vp.getPrecio() << endl << "Precio Detalle: " << vpd.getPrecioDetalle();
 
   vp.reiniciarVisitante();
-  vpe.reiniciarVisitante();
+  vpd.reiniciarVisitante();
+  
+  for(int i=0; i<equipo2.getNumComponentes(); i++){
+    ce = equipo2.getComponente(i);
+    ce.aceptar(vp);
+    ce.aceptar(vpd);
+  }
 
-  equipo2.visitarComponentes (vp);
-  equipo2.visitarComponentes (vpd);
 
   cout << "Equipo 2\n" << "Precio Total: " << vp.getPrecio() << endl << "Precio Detalle: " << vpd.getPrecioDetalle();
 
   vp.reiniciarVisitante();
-  vpe.reiniciarVisitante();
+  vpd.reiniciarVisitante();
+  
+  for(int i=0; i<equipo3.getNumComponentes(); i++){
+    ce = equipo3.getComponente(i);
+    ce.aceptar(vp);
+    ce.aceptar(vpd);
+  }
 
-  equipo3.visitarComponentes (vp);
-  equipo3.visitarComponentes (vpd);
 
   cout << "Equipo 3\n" << "Precio Total: " << vp.getPrecio() << endl << "Precio Detalle: " << vpd.getPrecioDetalle();
-
+*/ 
   return 0;
 }
+
+
 

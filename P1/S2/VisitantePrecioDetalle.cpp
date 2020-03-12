@@ -1,20 +1,24 @@
 #include "VisitantePrecioDetalle.h"
+#include "ComponenteEquipo.h"
 
-VisitantePrecioDetalle::VisitantePrecioDetalle (){
-	reiniciarVisitante();
+VisitantePrecioDetalle::VisitantePrecioDetalle() : VisitanteEquipo(), detalle("") {}
+
+void VisitantePrecioDetalle::visitarBus (Bus b) {
+    detalle += "Nombre Bus: " + b.getNombre() + " Precio Bus: " + to_string(b.getPrecio()) + " ";
 }
-public void VisitantePrecioDetalle::visitarDisco (Disco d){
-	detalle += "Nombre Disco: " + d.getNombre() + " Precio Disco: " + d.getPrecio() + " ";
+
+void VisitantePrecioDetalle::visitarDisco (Disco d) {
+    detalle += "Nombre Disco: " + d.getNombre() + " Precio Disco: " + to_string(d.getPrecio()) + " ";
 }
-public void VisitantePrecioDetalle::visitarTarjeta (Tarjeta t){
-	detalle += "Nombre Tarjeta: " + t.getNombre() + " Precio Tarjeta: " + t.getPrecio() + " ";
+
+void VisitantePrecioDetalle::visitarTarjeta (Tarjeta t) {
+    detalle += "Nombre Tarjeta: " + t.getNombre() + " Precio Tarjeta: " + to_string(t.getPrecio()) + " ";
 }
-public void VisitantePrecioDetalle::visitarBus (Bus b){
-	detalle += "Nombre Bus: " + b.getNombre() + " Precio Bus: " + b.getPrecio() + " ";
+
+void VisitantePrecioDetalle::reiniciarVisitante () {
+    detalle = "";
 }
-public void reiniciarVisitante (){
-	detalle = "";
-}
-string VisitantePrecioDetalle::getPrecioDetalle (){
-	return detalle;
+
+string VisitantePrecioDetalle::getPrecioDetalle () {
+    return detalle;
 }

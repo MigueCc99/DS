@@ -6,11 +6,6 @@ Equipo::Equipo (vector<ComponenteEquipo> componentes){
 	this->componentes = componentes;
 }
 
-void Equipo::visitarComponentes (VisitanteEquipo ve) {
-	for(int i=0; i<componentes.size(); i++)
-		componentes(i).aceptar(ve);
-}
-
 int Equipo::getNumComponentes (){
 	return componentes.size();
 }

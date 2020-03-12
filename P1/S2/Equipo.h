@@ -8,8 +8,8 @@
  * @email miguecc99@correo.ugr.es
  *
  */
-#ifndef _EQUIPO_H_
-#define _EQUIPO_H_
+#ifndef EQUIPO_H
+#define EQUIPO_H
 
 #include <vector>
 #include "ComponenteEquipo.h"
@@ -17,14 +17,14 @@ using namespace std;
 
 // Clase Disco
 class Equipo {
-	vector<ComponenteEquipo> componentes;
-
-	Equipo ();
-	Equipo (vector<ComponenteEquipo> componentes);
-	void visitarComponentes (VisitanteEquipo ve);
-	int getNumComponentes ();
-	ComponenteEquipo getComponente(int i);
+private:
+    vector<ComponenteEquipo> componentes;
+public:
+   Equipo ();
+   Equipo (vector<ComponenteEquipo> componentes);
+   int getNumComponentes ();
+   ComponenteEquipo getComponente(int i);
 };
 
-#endif /* _EQUIPO_H_ */
+#endif /* EQUIPO_H */
 

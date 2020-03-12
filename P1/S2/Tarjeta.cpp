@@ -1,5 +1,8 @@
 #include "Tarjeta.h"
 
-public void Tarjeta::aceptar (VisitanteEquipo ve){
-	ve.aceptar(this);
+Tarjeta::Tarjeta(string nombre, int precio) : ComponenteEquipo(nombre, precio) {}
+/*
+void Tarjeta::aceptar (VisitanteEquipo ve){
+	ve.visitarTarjeta(this);
 }
+*/

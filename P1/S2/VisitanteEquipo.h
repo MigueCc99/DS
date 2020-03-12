@@ -8,20 +8,23 @@
  * @email miguecc99@correo.ugr.es
  *
  */
-#ifndef _VISITANTEEQUIPO_H_
-#define _VISITANTEEQUIPO_H_
+#ifndef VISITANTEEQUIPO_H
+#define VISITANTEEQUIPO_H
 
+#include "Bus.h"
 #include "Disco.h"
 #include "Tarjeta.h"
-#include "Bus.h"
 
 // Clase VisitanteEquipo
 class VisitanteEquipo {
-	public virtual void visitarDisco (Disco d) = 0;
-	public virtual void visitarTarjeta (Tarjeta t) = 0;
-	public virtual void visitarBus (Bus b) = 0;
-	public virtual void reiniciarVisitante ();
+public:
+    VisitanteEquipo () {}
+    virtual void visitarBus (Bus b) = 0;
+    virtual void visitarDisco (Disco d) = 0;
+    virtual void visitarTarjeta (Tarjeta t) = 0;
+    virtual void reiniciarVisitante () = 0;
 };
 
-#endif /* _VISITANTEEQUIPO_H_ */
+
+#endif /* VISITANTEEQUIPO_H */
 

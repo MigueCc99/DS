@@ -1,7 +1,8 @@
 #include "Bus.h"
 
-public void Bus::aceptar (VisitanteEquipo ve){
-		ve.visitarBus(this);
+Bus::Bus (string nombre, int precio) : ComponenteEquipo(nombre, precio) {}
+/*
+void Bus::aceptar (VisitanteEquipo ve){
+    ve.visitarBus(this);
 }
-
-
+*/

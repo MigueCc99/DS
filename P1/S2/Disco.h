@@ -8,19 +8,18 @@
  * @email miguecc99@correo.ugr.es
  *
  */
-#ifndef _DISCO_H_
-#define _DISCO_H_
+#ifndef DISCO_H
+#define DISCO_H
 
-#include "ComponenteEquipo.cpp"
-#include "VisitanteEquipo.h"
+#include "ComponenteEquipo.h"
 using namespace std;
 
 // Clase Disco
 class Disco : public ComponenteEquipo {
-
-	public void aceptar (VisitanteEquipo ve);
-
+public:
+    Disco (string nombre, int precio);
+//    void aceptar (VisitanteEquipo ve);
 };
 
-#endif /* _DISCO_H_ */
+#endif /* DISCO_H */
 
