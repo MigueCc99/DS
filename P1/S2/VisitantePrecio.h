@@ -8,23 +8,20 @@
  * @email miguecc99@correo.ugr.es
  *
  */
-#ifndef VISITANTEPRECIO_H
-#define VISITANTEPRECIO_H
-
-#include "VisitanteEquipo.h"
+#ifndef _VISITANTEPRECIO_H_
+#define _VISITANTEPRECIO_H_
 
 // Clase VisitantePrecio
-class VisitantePrecio : public VisitanteEquipo {
-private:
-    int precio;
-public:
-    VisitantePrecio ();
-    void visitarBus (Bus b);
-    void visitarDisco (Disco d);
-    void visitarTarjeta (Tarjeta t);
-    void reiniciarVisitante ();
-    int getPrecio ();
+class VisitantePrecio : VisitanteEquipo {
+	int precio;
+
+	VisitantePrecio ();
+	public void visitarDisco (Disco d);
+	public void visitarTarjeta (Tarjeta t);
+	public void visitarBus (Bus b);
+	public void reiniciarVisitante ();
+	int getPrecio();
 };
 
-#endif /* VISITANTEPRECIO_H */
+#endif /* _VISITANTEPRECIO_H_ */
 

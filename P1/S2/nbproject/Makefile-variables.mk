@@ -7,21 +7,21 @@ CND_BASEDIR=`pwd`
 CND_BUILDDIR=build
 CND_DISTDIR=dist
 # Debug configuration
-CND_PLATFORM_Debug=GNU-Linux
-CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux
-CND_ARTIFACT_NAME_Debug=s2
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/s2
-CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux/package
-CND_PACKAGE_NAME_Debug=s2.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/s2.tar
+CND_PLATFORM_Debug=GNU-MacOSX
+CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-MacOSX
+CND_ARTIFACT_NAME_Debug=p1_s2
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-MacOSX/p1_s2
+CND_PACKAGE_DIR_Debug=dist/Debug/GNU-MacOSX/package
+CND_PACKAGE_NAME_Debug=p1s2.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-MacOSX/package/p1s2.tar
 # Release configuration
-CND_PLATFORM_Release=GNU-Linux
-CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux
-CND_ARTIFACT_NAME_Release=s2
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/s2
-CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=s2.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/s2.tar
+CND_PLATFORM_Release=GNU-MacOSX
+CND_ARTIFACT_DIR_Release=dist/Release/GNU-MacOSX
+CND_ARTIFACT_NAME_Release=p1_s2
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-MacOSX/p1_s2
+CND_PACKAGE_DIR_Release=dist/Release/GNU-MacOSX/package
+CND_PACKAGE_NAME_Release=p1s2.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-MacOSX/package/p1s2.tar
 #
 # include compiler specific variables
 #

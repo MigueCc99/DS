@@ -8,24 +8,26 @@
  * @email miguecc99@correo.ugr.es
  *
  */
-
-#ifndef COMPONENTEEQUIPO_H
-#define COMPONENTEEQUIPO_H
+#ifndef _COMPONENTEEQUIPO_H_
+#define _COMPONENTEEQUIPO_H_
 
 #include <string>
+#include "VisitanteEquipo.h"
 using namespace std;
 
+// Clase ComponenteEquipo
 class ComponenteEquipo {
-private:
-    string nombre;
-    int precio;
-public:
-    ComponenteEquipo ();
-    ComponenteEquipo (string nombre, int precio);
-    int getPrecio();
-    string getNombre();
-//    virtual void aceptar (VisitanteEquipo ve) = 0;
+	private string nombre;
+	private int precio;
+
+        ComponenteEquipo ();
+	ComponenteEquipo (string nombre, int precio);
+	int getPrecio();
+	string getNombre();
+	public virtual void aceptar (VisitanteEquipo ve) = 0;
+
 };
 
-#endif /* COMPONENTEEQUIPO_H */
+#endif /* _COMPONENTEEQUIPO_H_ */
+
 

@@ -1,23 +1,20 @@
 #include "VisitantePrecio.h"
 
-VisitantePrecio::VisitantePrecio () : VisitanteEquipo (), precio(0) {}
-
-void VisitantePrecio::visitarBus (Bus b) {
-    precio += b.getPrecio();
+VisitantePrecio::VisitantePrecio (){
+	reiniciarVisitante ();
 }
-
-void VisitantePrecio::visitarDisco (Disco d) {
-    precio += d.getPrecio();
+public void VisitantePrecio::visitarDisco (Disco d){
+	precio += d.getPrecio();
 }
-
-void VisitantePrecio::visitarTarjeta (Tarjeta t) {
-    precio += t.getPrecio();
+public void VisitantePrecio::visitarTarjeta (Tarjeta t){
+	precio += t.getPrecio();
 }
-
-void VisitantePrecio::reiniciarVisitante () {
-    precio = 0;
+public void VisitantePrecio::visitarBus (Bus b){
+	precio += b.getPrecio();
 }
-
-int VisitantePrecio::getPrecio () {
-    return precio;
+public void reiniciarVisitante (){
+	precio = 0;
+}
+int VisitantePrecio::getPrecio (){
+	return precio;
 }

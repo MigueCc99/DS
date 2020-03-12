@@ -8,25 +8,23 @@
  * @email miguecc99@correo.ugr.es
  *
  */
-#ifndef VISITANTEPRECIODETALLE_H
-#define VISITANTEPRECIODETALLE_H
+#ifndef _VISITANTEPRECIODETALLE_H_
+#define _VISITANTEPRECIODETALLE_H_
 
 #include <string>
-#include "VisitanteEquipo.h"
 using namespace std;
 
 // Clase VisitantePrecioDetalle
-class VisitantePrecioDetalle : public VisitanteEquipo {
-private:
-    string detalle;
-public:
-    VisitantePrecioDetalle ();
-    void visitarBus (Bus b);
-    void visitarDisco (Disco d);
-    void visitarTarjeta (Tarjeta t);
-    void reiniciarVisitante ();
-    string getPrecioDetalle ();
+class VisitantePrecioDetalle : VisitanteEquipo {
+	string detalle;
+
+	VisitantePrecioDetalle ();
+	public void visitarDisco (Disco d);
+	public void visitarTarjeta (Tarjeta t);
+	public void visitarBus (Bus b);
+	public void reiniciarVisitante ();
+	string getPrecioDetalle();
 };
 
-#endif /* VISITANTEPRECIODETALLE_H */
+#endif /* _VISITANTEPRECIODETALLE_H_ */
 
