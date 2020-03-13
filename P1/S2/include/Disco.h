@@ -8,21 +8,19 @@
  * @email miguecc99@correo.ugr.es
  *
  */
+#ifndef DISCO_H
+#define DISCO_H
 
-#ifndef BUS_H
-#define BUS_H
 
-#include "ComponenteEquipo.h"
 using namespace std;
 
-// Clase Bus
-class Bus : public ComponenteEquipo {
+class VisitanteEquipo;
+
+// Clase Disco
+class Disco : public ComponenteEquipo {
 public:
-    Bus (string nombre, int precio);
-
-    //void aceptar (VisitanteEquipo ve);
-
+    Disco (string nombre, int precio);
+    void aceptar (VisitanteEquipo & ve);
 };
 
-#endif /* BUS_H */
-
+#endif /* DISCO_H */

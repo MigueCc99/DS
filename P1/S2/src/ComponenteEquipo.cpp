@@ -1,4 +1,5 @@
 #include "ComponenteEquipo.h"
+#include "VisitanteEquipo.h"
 
 ComponenteEquipo::ComponenteEquipo () {
     this->nombre = "sin nombre";

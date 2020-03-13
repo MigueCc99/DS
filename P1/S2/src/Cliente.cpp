@@ -11,8 +11,9 @@ using namespace std;
 
 int main (int argc, char *argv[]) {
 
-  Disco disco1 ("SEAGATE BARRACUDA", 100);
+  Disco * disco1 = new Disco ("SEAGATE BARRACUDA", 100);
   Disco disco2 ("KINGSTON A400", 50);
+
   Disco disco3 ("TOSHIBA OCZ", 40);
 
   Bus bus1 ("PCIEXPRESS1", 15);
@@ -49,9 +50,9 @@ int main (int argc, char *argv[]) {
 
   VisitantePrecio vp ();
   VisitantePrecioDetalle vpd ();
-  
+
   ComponenteEquipo ce ();
-/*
+
   for(int i=0; i<equipo1.getNumComponentes(); i++){
     ce = equipo1.getComponente(i);
     ce.aceptar(vp);
@@ -62,7 +63,7 @@ int main (int argc, char *argv[]) {
 
   vp.reiniciarVisitante();
   vpd.reiniciarVisitante();
-  
+
   for(int i=0; i<equipo2.getNumComponentes(); i++){
     ce = equipo2.getComponente(i);
     ce.aceptar(vp);
@@ -74,7 +75,7 @@ int main (int argc, char *argv[]) {
 
   vp.reiniciarVisitante();
   vpd.reiniciarVisitante();
-  
+
   for(int i=0; i<equipo3.getNumComponentes(); i++){
     ce = equipo3.getComponente(i);
     ce.aceptar(vp);
@@ -83,9 +84,6 @@ int main (int argc, char *argv[]) {
 
 
   cout << "Equipo 3\n" << "Precio Total: " << vp.getPrecio() << endl << "Precio Detalle: " << vpd.getPrecioDetalle();
-*/ 
+
   return 0;
 }
-
-
-

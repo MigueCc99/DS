@@ -8,18 +8,20 @@
  * @email miguecc99@correo.ugr.es
  *
  */
-#ifndef DISCO_H
-#define DISCO_H
+#ifndef TARJETA_H
+#define TARJETA_H
 
 #include "ComponenteEquipo.h"
 using namespace std;
 
-// Clase Disco
-class Disco : public ComponenteEquipo {
+class VisitanteEquipo;
+
+// Clase Tarjeta
+class Tarjeta :  public ComponenteEquipo {
 public:
-    Disco (string nombre, int precio);
-//    void aceptar (VisitanteEquipo ve);
+    Tarjeta (string nombre, int precio);
+    void aceptar (VisitanteEquipo & ve);
 };
 
-#endif /* DISCO_H */
 
+#endif /* TARJETA_H */
