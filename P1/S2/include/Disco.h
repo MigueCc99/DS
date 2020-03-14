@@ -14,13 +14,14 @@
 
 using namespace std;
 
+#include "ComponenteEquipo.h"
 class VisitanteEquipo;
 
 // Clase Disco
 class Disco : public ComponenteEquipo {
 public:
     Disco (string nombre, int precio);
-    void aceptar (VisitanteEquipo & ve);
+    void aceptar (VisitanteEquipo *ve);
 };
 
 #endif /* DISCO_H */

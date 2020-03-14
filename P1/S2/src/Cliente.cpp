@@ -11,21 +11,20 @@ using namespace std;
 
 int main (int argc, char *argv[]) {
 
-  Disco * disco1 = new Disco ("SEAGATE BARRACUDA", 100);
-  Disco disco2 ("KINGSTON A400", 50);
+  Disco *disco1 = new Disco ("SEAGATE BARRACUDA", 100);
+  Disco *disco2 = new Disco ("KINGSTON A400", 50);
+  Disco *disco3 = new Disco ("TOSHIBA OCZ", 40);
 
-  Disco disco3 ("TOSHIBA OCZ", 40);
+  Bus *bus1 = new Bus ("PCIEXPRESS1", 15);
+  Bus *bus2 = new Bus ("PCIEXPRESS2", 20);
+  Bus *bus3 = new Bus ("PCIEXPRESS3", 30);
 
-  Bus bus1 ("PCIEXPRESS1", 15);
-  Bus bus2 ("PCIEXPRESS2", 20);
-  Bus bus3 ("PCIEXPRESS3", 30);
-
-  Tarjeta tarjeta1 ("NVIDIA", 400);
-  Tarjeta tarjeta2 ("AMD", 300);
-  Tarjeta tarjeta3 ("INTEL", 150);
+  Tarjeta *tarjeta1 = new Tarjeta ("NVIDIA", 400);
+  Tarjeta *tarjeta2 = new Tarjeta ("AMD", 300);
+  Tarjeta *tarjeta3 = new Tarjeta ("INTEL", 150);
 
   vector <ComponenteEquipo> componentes;
-
+/*
   componentes.push_back (disco1);
   componentes.push_back (bus1);
   componentes.push_back (tarjeta1);
@@ -84,6 +83,6 @@ int main (int argc, char *argv[]) {
 
 
   cout << "Equipo 3\n" << "Precio Total: " << vp.getPrecio() << endl << "Precio Detalle: " << vpd.getPrecioDetalle();
-
+*/
   return 0;
 }

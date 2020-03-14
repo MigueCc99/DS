@@ -19,12 +19,11 @@ private:
     int precio;
 public:
     VisitantePrecio ();
-    void visitarBus (Bus b);
-    void visitarDisco (Disco d);
-    void visitarTarjeta (Tarjeta t);
+    void visitarBus (Bus *b);
+    void visitarDisco (Disco *d);
+    void visitarTarjeta (Tarjeta *t);
     void reiniciarVisitante ();
     int getPrecio ();
 };
 
 #endif /* VISITANTEPRECIO_H */
-

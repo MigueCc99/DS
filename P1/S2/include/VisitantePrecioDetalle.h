@@ -21,12 +21,11 @@ private:
     string detalle;
 public:
     VisitantePrecioDetalle ();
-    void visitarBus (Bus b);
-    void visitarDisco (Disco d);
-    void visitarTarjeta (Tarjeta t);
+    void visitarBus (Bus *b);
+    void visitarDisco (Disco *d);
+    void visitarTarjeta (Tarjeta *t);
     void reiniciarVisitante ();
     string getPrecioDetalle ();
 };
 
 #endif /* VISITANTEPRECIODETALLE_H */
-

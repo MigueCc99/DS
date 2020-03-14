@@ -28,7 +28,7 @@ public:
     ComponenteEquipo (string nombre, int precio);
     int getPrecio();
     string getNombre();
-    virtual void aceptar (VisitanteEquipo & ve) {};
+    virtual void aceptar (VisitanteEquipo *ve) {};
 };
 
 #endif /* COMPONENTEEQUIPO_H */

@@ -12,18 +12,16 @@
 #ifndef BUS_H
 #define BUS_H
 
+#include "ComponenteEquipo.h"
 using namespace std;
 
 class VisitanteEquipo;
-class ComponenteEquipo;
 
 // Clase Bus
 class Bus : public ComponenteEquipo {
 public:
     Bus (string nombre, int precio);
-
-    void aceptar (VisitanteEquipo & ve) ;
-
+    void aceptar (VisitanteEquipo *ve) ;
 };
 
 #endif /* BUS_H */
