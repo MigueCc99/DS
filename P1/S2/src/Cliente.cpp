@@ -10,7 +10,7 @@ using namespace std;
 
 
 int main (int argc, char *argv[]) {
-
+/*
   Disco *disco1 = new Disco ("SEAGATE BARRACUDA", 100);
   Disco *disco2 = new Disco ("KINGSTON A400", 50);
   Disco *disco3 = new Disco ("TOSHIBA OCZ", 40);
@@ -22,9 +22,21 @@ int main (int argc, char *argv[]) {
   Tarjeta *tarjeta1 = new Tarjeta ("NVIDIA", 400);
   Tarjeta *tarjeta2 = new Tarjeta ("AMD", 300);
   Tarjeta *tarjeta3 = new Tarjeta ("INTEL", 150);
+*/
+  Disco disco1 ("SEAGATE BARRACUDA", 100);
+  Disco disco2 ("KINGSTON A400", 50);
+  Disco disco3 ("TOSHIBA OCZ", 40);
+
+  Bus bus1 ("PCIEXPRESS1", 15);
+  Bus bus2 ("PCIEXPRESS2", 20);
+  Bus bus3 ("PCIEXPRESS3", 30);
+
+  Tarjeta tarjeta1 ("NVIDIA", 400);
+  Tarjeta tarjeta2 ("AMD", 300);
+  Tarjeta tarjeta3 ("INTEL", 150);
 
   vector <ComponenteEquipo> componentes;
-/*
+
   componentes.push_back (disco1);
   componentes.push_back (bus1);
   componentes.push_back (tarjeta1);
@@ -51,7 +63,8 @@ int main (int argc, char *argv[]) {
   VisitantePrecioDetalle vpd ();
 
   ComponenteEquipo ce ();
-
+  
+/*
   for(int i=0; i<equipo1.getNumComponentes(); i++){
     ce = equipo1.getComponente(i);
     ce.aceptar(vp);
@@ -68,7 +81,6 @@ int main (int argc, char *argv[]) {
     ce.aceptar(vp);
     ce.aceptar(vpd);
   }
-
 
   cout << "Equipo 2\n" << "Precio Total: " << vp.getPrecio() << endl << "Precio Detalle: " << vpd.getPrecioDetalle();
 

@@ -27,4 +27,3 @@ public:
 };
 
 #endif /* EQUIPO_H */
-

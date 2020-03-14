@@ -26,6 +26,8 @@ private:
 public:
     ComponenteEquipo ();
     ComponenteEquipo (string nombre, int precio);
+    ComponenteEquipo (const ComponenteEquipo &ce);
+    ComponenteEquipo& operator=(const ComponenteEquipo &ce);
     int getPrecio();
     string getNombre();
     virtual void aceptar (VisitanteEquipo *ve) {};
