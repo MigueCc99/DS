@@ -1,20 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Universidad de Granada - Grado en Informatica : 2016  
+ * 
+ * Asignatura: Desarrollo de Software
+ * Practica 1 - Sesión 3
+ * 
+ * @author Miguel Ángel Campos Cubillas
+ * @email miguecc99@correo.ugr.es
+ * 
  */
 package s3;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author pvr999
- */
 public abstract class Observable {
     ArrayList<Observer> observers;
     
-    protected Observable(){
+    public Observable(){
         observers = new ArrayList<Observer>();
     }
     
@@ -26,8 +27,9 @@ public abstract class Observable {
         observers.remove(observer);
     }
     
-    public void notifyObservers(){
-        
+    public void notifyObservers(int temperatura){
+        for(Observer o : observers)
+            o.update(this, temperatura);
     }
     
     
