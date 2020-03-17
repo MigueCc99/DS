@@ -94,7 +94,8 @@ public class BotonCambio extends JFrame implements Observer {
         ActionListener al1 = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                sujetoObservable.setTemperaturaActual(sujetoObservable.getTemperaturaActual()-1);
+                if(sujetoObservable.getTemperaturaMin() < sujetoObservable.getTemperaturaActual())
+                    sujetoObservable.setTemperaturaActual(sujetoObservable.getTemperaturaActual()-1);
             }
         };
         
@@ -103,7 +104,8 @@ public class BotonCambio extends JFrame implements Observer {
         ActionListener al2 = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                sujetoObservable.setTemperaturaActual(sujetoObservable.getTemperaturaActual()+1);
+                if(sujetoObservable.getTemperaturaMax() > sujetoObservable.getTemperaturaActual())
+                    sujetoObservable.setTemperaturaActual(sujetoObservable.getTemperaturaActual()+1);
             }
         };
         
