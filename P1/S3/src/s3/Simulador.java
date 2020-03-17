@@ -1,5 +1,5 @@
 /**
- * Universidad de Granada - Grado en Informatica : 2016  
+ * Universidad de Granada - Grado en Informatica : 2020  
  * 
  * Asignatura: Desarrollo de Software
  * Practica 1 - Sesión 3
@@ -18,6 +18,7 @@ public class Simulador extends Observable implements Runnable{
     private int temperaturaActual;
     private int tMin, tMax;
     private boolean running;
+    private boolean manual;
     private int tRefresco;
     
     private static int randInt(int min, int max){
@@ -29,6 +30,7 @@ public class Simulador extends Observable implements Runnable{
         super();
         this.temperaturas = new ArrayList<>();
         this.running = true;
+        this.manual = false;
         this.tMin = tMin;
         this.tMax = tMax;
         this.tRefresco = 1000; // refresco x segundo
@@ -47,6 +49,18 @@ public class Simulador extends Observable implements Runnable{
     
     public int getTemperaturaActual(){
         return temperaturaActual;
+    }
+    
+    public void setTemperaturaActual(int t){
+        this.temperaturaActual = t;
+    }
+
+    public boolean getManual (){
+        return this.manual;
+    }
+    
+    public void setManual (boolean m){
+        this.manual = m;
     }
 
     public void actualizaTemperaturaMinMax(){
@@ -70,16 +84,16 @@ public class Simulador extends Observable implements Runnable{
  
     @Override
     public void run() {
-        Integer minutos = 0, segundos = 0, milesimas = 0;
+        Integer milesimas = 0;
         while (running){
-            this.temperaturaActual = randInt(tMin-1, tMax+1);
             try {
                 Thread.sleep(4);
                 milesimas += 4;
-                
+                notifyObservers();
                 if(milesimas%tRefresco == 0){
-                    actualizaTemperaturaMinMax();
-                    notifyObservers(this.temperaturaActual);
+                    if(!manual)
+                        temperaturaActual = randInt(tMin-1, tMax+1);
+                    //actualizaTemperaturaMinMax();
                     milesimas = 0;
                 }
                 

@@ -1,5 +1,5 @@
 /**
- * Universidad de Granada - Grado en Informatica : 2016  
+ * Universidad de Granada - Grado en Informatica : 2020  
  * 
  * Asignatura: Desarrollo de Software
  * Practica 1 - Sesión 3
@@ -11,6 +11,5 @@
 package s3;
 
 public interface Observer {
-    public void update (Observable o, int temperatura);
-    // public void update (int temperaturaActual);
+    public void update (Observable o);
 }

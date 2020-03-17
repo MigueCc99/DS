@@ -1,5 +1,5 @@
 /**
- * Universidad de Granada - Grado en Informatica : 2016  
+ * Universidad de Granada - Grado en Informatica : 2020  
  * 
  * Asignatura: Desarrollo de Software
  * Practica 1 - Sesión 3
@@ -14,13 +14,10 @@ import s3.Observable;
 import s3.Observer;
 import s3.Simulador;
 
-public class GraficaTemperatura implements Observer {
+public class GraficaTemperatura {
     Simulador sujetoObservable;
     
-    @Override
-    public void update(Observable o, int temperatura) {
-        
-    }
+
     
     
 }

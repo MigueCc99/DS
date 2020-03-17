@@ -27,9 +27,9 @@ public abstract class Observable {
         observers.remove(observer);
     }
     
-    public void notifyObservers(int temperatura){
+    public void notifyObservers(){
         for(Observer o : observers)
-            o.update(this, temperatura);
+            o.update(this);
     }
     
     

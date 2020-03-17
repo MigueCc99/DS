@@ -1,5 +1,5 @@
 /**
- * Universidad de Granada - Grado en Informatica : 2016  
+ * Universidad de Granada - Grado en Informatica : 2020  
  * 
  * Asignatura: Desarrollo de Software
  * Practica 1 - Sesión 3
@@ -11,18 +11,24 @@
 package s3;
 
 import GUI.PantallaTemperatura;
+import GUI.BotonCambio;
 
 public class S3 {
 
     public static void main(String[] args) {
         PantallaTemperatura pantallaT = new PantallaTemperatura ();
+        BotonCambio botonC = new BotonCambio();
         Simulador simulador = new Simulador(0,60);
-        pantallaT.setVisible(true);
         
         simulador.addObserver(pantallaT);
-        
+        simulador.addObserver(botonC);
+
         Thread t1 = new Thread(simulador);
         t1.start();
+/*     
+        while(true)
+            System.out.println("Temperatura: " + simulador.getTemperaturaActual() + " Manual: " + simulador.getManual() + "\n");
+*/    
     }
-    
+  
 }
