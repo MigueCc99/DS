@@ -47,6 +47,14 @@ public class Simulador extends Observable implements Runnable{
         running = true;
     }
     
+    public int getTemperaturaMax(){
+        return tMax;
+    }
+    
+    public int getTemperaturaMin(){
+        return tMin;
+    }
+    
     public int getTemperaturaActual(){
         return temperaturaActual;
     }
