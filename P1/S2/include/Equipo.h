@@ -13,17 +13,25 @@
 
 #include <vector>
 #include "ComponenteEquipo.h"
+#include "Bus.h"
+#include "Tarjeta.h"
+#include "Disco.h"
 using namespace std;
 
 // Clase Disco
 class Equipo {
 private:
-    vector<ComponenteEquipo> componentes;
+    Bus *bus = nullptr;
+    Tarjeta *tarjeta = nullptr;
+    Disco *disco = nullptr;
 public:
    Equipo ();
-   Equipo (vector<ComponenteEquipo> componentes);
-   int getNumComponentes ();
-   ComponenteEquipo getComponente(int i);
+   void setBus(Bus *b);
+   void setTarjeta(Tarjeta *t);
+   void setDisco(Disco *d);
+   Bus getBus();
+   Tarjeta getTarjeta();
+   Disco getDisco();
 };
 
 #endif /* EQUIPO_H */

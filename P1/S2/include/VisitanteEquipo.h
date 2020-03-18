@@ -19,10 +19,10 @@
 class VisitanteEquipo {
 public:
     VisitanteEquipo () {}
-    virtual void visitarBus (Bus *b) {};
-    virtual void visitarDisco (Disco *d) {};
-    virtual void visitarTarjeta (Tarjeta *t) {};
-    virtual void reiniciarVisitante () {};
+    virtual void visitarBus (Bus *b) = 0;
+    virtual void visitarDisco (Disco *d) = 0;
+    virtual void visitarTarjeta (Tarjeta *t) = 0;
+    virtual void reiniciarVisitante () = 0;
 };
 
 

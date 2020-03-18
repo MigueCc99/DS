@@ -35,66 +35,68 @@ int main (int argc, char *argv[]) {
   Tarjeta tarjeta2 ("AMD", 300);
   Tarjeta tarjeta3 ("INTEL", 150);
 
-  vector <ComponenteEquipo> componentes;
+  Equipo equipo1;
+  equipo1.setDisco(&disco1);
+  equipo1.setTarjeta(&tarjeta1);
+  equipo1.setBus(&bus1);
 
-  componentes.push_back (disco1);
-  componentes.push_back (bus1);
-  componentes.push_back (tarjeta1);
+  Equipo equipo2;
+  equipo2.setDisco(&disco2);
+  equipo2.setTarjeta(&tarjeta2);
+  equipo2.setBus(&bus2);
 
-  Equipo equipo1 (componentes);
+  Equipo equipo3;
+  equipo3.setDisco(&disco3);
+  equipo3.setTarjeta(&tarjeta3);
+  equipo3.setBus(&bus3);
 
-  componentes.erase (componentes.begin(), componentes.end());
+  /*
+  Equipo equipo2 (disco2,tarjeta2,bus2);
 
-  componentes.push_back (disco2);
-  componentes.push_back (bus2);
-  componentes.push_back (tarjeta2);
+  Equipo equipo3 (disco2,tarjeta2,bus2);
+  */
 
-  Equipo equipo2 (componentes);
+  VisitantePrecio vp;
+  VisitantePrecioDetalle vpd;
 
-  componentes.erase (componentes.begin(), componentes.end());
+  // Visitar los componentes del equipo1
+  equipo1.getBus().aceptar(vp);
+  equipo1.getBus().aceptar(vpd);
+  equipo1.getTarjeta().aceptar(vp);
+  equipo1.getTarjeta().aceptar(vpd);
+  equipo1.getDisco().aceptar(vp);
+  equipo1.getDisco().aceptar(vpd);
 
-  componentes.push_back (disco3);
-  componentes.push_back (bus3);
-  componentes.push_back (tarjeta3);
-
-  Equipo equipo3 (componentes);
-
-  VisitantePrecio vp ();
-  VisitantePrecioDetalle vpd ();
-
-  ComponenteEquipo ce ();
-  
-/*
-  for(int i=0; i<equipo1.getNumComponentes(); i++){
-    ce = equipo1.getComponente(i);
-    ce.aceptar(vp);
-    ce.aceptar(vpd);
-  }
-
-  cout << "Equipo 1\n" << "Precio Total: " << vp.getPrecio() << endl << "Precio Detalle: " << vpd.getPrecioDetalle();
+  cout << "\n-- Equipo 1 --\n" << "Precio Total: " << vp.getPrecio() << endl << "Precio Detalle: " << vpd.getPrecioDetalle() << endl;
 
   vp.reiniciarVisitante();
   vpd.reiniciarVisitante();
 
-  for(int i=0; i<equipo2.getNumComponentes(); i++){
-    ce = equipo2.getComponente(i);
-    ce.aceptar(vp);
-    ce.aceptar(vpd);
-  }
 
-  cout << "Equipo 2\n" << "Precio Total: " << vp.getPrecio() << endl << "Precio Detalle: " << vpd.getPrecioDetalle();
+  // Visitar los componentes del equipo2
+  equipo2.getBus().aceptar(vp);
+  equipo2.getBus().aceptar(vpd);
+  equipo2.getTarjeta().aceptar(vp);
+  equipo2.getTarjeta().aceptar(vpd);
+  equipo2.getDisco().aceptar(vpd);
+
+  equipo2.getDisco().aceptar(vp);
+  cout << "\n-- Equipo 2 --\n" << "Precio Total: " << vp.getPrecio() << endl << "Precio Detalle: " << vpd.getPrecioDetalle() << endl;
 
   vp.reiniciarVisitante();
   vpd.reiniciarVisitante();
 
-  for(int i=0; i<equipo3.getNumComponentes(); i++){
-    ce = equipo3.getComponente(i);
-    ce.aceptar(vp);
-    ce.aceptar(vpd);
-  }
+
+  // Visitar los componentes del equipo3
+  equipo3.getBus().aceptar(vp);
+  equipo3.getBus().aceptar(vpd);
+  equipo3.getTarjeta().aceptar(vp);
+  equipo3.getTarjeta().aceptar(vpd);
+  equipo3.getDisco().aceptar(vp);
+  equipo3.getDisco().aceptar(vpd);
+
+  cout << "\n-- Equipo 3 --\n" << "Precio Total: " << vp.getPrecio() << endl << "Precio Detalle: " << vpd.getPrecioDetalle() << endl;
 
 
-  cout << "Equipo 3\n" << "Precio Total: " << vp.getPrecio() << endl << "Precio Detalle: " << vpd.getPrecioDetalle();
-*/
   return 0;
 }

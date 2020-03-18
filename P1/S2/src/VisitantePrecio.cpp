@@ -1,4 +1,5 @@
 #include "VisitantePrecio.h"
+#include <iostream>
 
 VisitantePrecio::VisitantePrecio () : VisitanteEquipo (), precio(0) {}
 

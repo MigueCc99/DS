@@ -20,8 +20,8 @@ class VisitanteEquipo;
 class Tarjeta :  public ComponenteEquipo {
 public:
     Tarjeta (string nombre, int precio);
-    void aceptar (VisitanteEquipo *ve);
+    void aceptar (VisitanteEquipo &ve);
 };
 
 
-#endif /* TARJETA_H */
+#endif /* TARJETA_H */ 

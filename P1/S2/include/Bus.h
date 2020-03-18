@@ -21,7 +21,7 @@ class VisitanteEquipo;
 class Bus : public ComponenteEquipo {
 public:
     Bus (string nombre, int precio);
-    void aceptar (VisitanteEquipo *ve) ;
+    void aceptar (VisitanteEquipo &ve) ;
 };
 
 #endif /* BUS_H */

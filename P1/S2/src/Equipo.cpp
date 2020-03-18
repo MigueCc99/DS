@@ -2,14 +2,34 @@
 
 Equipo::Equipo () {}
 
-Equipo::Equipo (vector<ComponenteEquipo> componentes){
-	this->componentes = componentes;
+/*
+Equipo::Equipo (Disco d, Tarjeta t, Bus b){
+	this->bus = &b;
+	this->tarjeta = &t;
+	this->disco = &d;
+}
+*/
+
+void Equipo::setBus(Bus *b) {
+	bus=b;
 }
 
-int Equipo::getNumComponentes (){
-	return componentes.size();
+void Equipo::setTarjeta(Tarjeta *t) {
+	tarjeta=t;
 }
 
-ComponenteEquipo Equipo::getComponente(int i){
-	return componentes[i];
+void Equipo::setDisco(Disco *d) {
+	disco=d;
+}
+
+Bus Equipo::getBus(){
+	return *bus;
+}
+
+Tarjeta Equipo::getTarjeta(){
+	return *tarjeta;
+}
+
+Disco Equipo::getDisco(){
+	return *disco;
 }

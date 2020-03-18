@@ -30,7 +30,7 @@ public:
     ComponenteEquipo& operator=(const ComponenteEquipo &ce);
     int getPrecio();
     string getNombre();
-    virtual void aceptar (VisitanteEquipo *ve) {};
+    virtual void aceptar (class VisitanteEquipo &ve) = 0;
 };
 
 #endif /* COMPONENTEEQUIPO_H */
