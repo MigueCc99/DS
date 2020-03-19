@@ -39,7 +39,7 @@ public class BotonCambio extends JFrame implements Observer {
         setMinimumSize(new Dimension(200,200));
         inicializar ();
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setTitle("Botonera");
+        setTitle("Gestión de Temperatura");
         setLocation(200,200);
         setVisible(true);
     }
