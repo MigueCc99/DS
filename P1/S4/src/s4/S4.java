@@ -31,6 +31,8 @@ public class S4 {
         
         Objetivo obj = new Objetivo (salpicadero);
         
+        cliente.setObjetivo(obj);
+        
         gestorFiltros.setObjetivo(obj);
         
         Thread t1 = new Thread(cliente);

@@ -12,6 +12,7 @@ package s4;
 
 public class Cliente implements Runnable {
     private GestorFiltros gestorFiltros;
+    private Objetivo obj;
     
     public Cliente (GestorFiltros gf) {
         gestorFiltros = gf;
@@ -21,6 +22,10 @@ public class Cliente implements Runnable {
         gestorFiltros.solicitarFiltro(revoluciones, estado);
     }
     
+    public void setObjetivo (Objetivo o) {
+        obj = o;
+    }
+    
     @Override 
     public void run() {
         Integer milesimas = 0;
@@ -28,7 +33,7 @@ public class Cliente implements Runnable {
             try {
                 Thread.sleep(4);
                 if(milesimas % 1000 == 0){
-                    solicitar(100,EstadoMotor.ACELERANDO);
+                    solicitar(obj.getVelocidadAngular(),EstadoMotor.ACELERANDO);
                     milesimas = 0;
                 }
             } catch(java.lang.InterruptedException e){

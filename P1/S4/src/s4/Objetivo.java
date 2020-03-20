@@ -27,6 +27,10 @@ public class Objetivo {
         distancia = 0.0;
     }
     
+    public double getVelocidadAngular() {
+        return velocidadAngular;
+    }
+    
     public void ejecutar (double revoluciones, EstadoMotor estado) {
         velocidadAngular = revoluciones;
         velocidadLineal = 2*Math.PI*radio*velocidadAngular*(60/1000);

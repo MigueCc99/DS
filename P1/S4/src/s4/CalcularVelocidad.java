@@ -23,23 +23,34 @@ public class CalcularVelocidad implements Filtro {
     
     private void modificarIncremento (double revoluciones, EstadoMotor estado) {
         if (estado == EstadoMotor.ACELERANDO){
-            if(revoluciones+100 < maxRev)
+            double aux = revoluciones + 100;
+            if(aux < maxRev) {
                 incrementoVelocidad = 100;
+            }
+            else{
+                incrementoVelocidad = 0;
+            }    
+                
         }
         else if (estado == EstadoMotor.FRENANDO){
-            if(revoluciones-100 > minRev)
+            double aux = revoluciones - 100;
+            if(aux > minRev) {
                 incrementoVelocidad = -100;
+            }
+            else{
+                incrementoVelocidad = 0;
+            }  
         }
-        else{
+        else {
             incrementoVelocidad = 0;
-        }           
+        }
     }
     
     @Override 
     public double ejecutar (double revoluciones, EstadoMotor estado) {
         modificarIncremento(revoluciones, estado);
         
-        revoluciones += incrementoVelocidad;
+        revoluciones = revoluciones + incrementoVelocidad;
         
         return revoluciones;
     }
