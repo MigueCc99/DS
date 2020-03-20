@@ -34,6 +34,5 @@ public class CadenaFiltros {
         for(int i=0; i<filtros.size(); i++)
             aux = filtros.get(i).ejecutar(aux, estado);
         obj.ejecutar(aux, estado);
-        System.out.println("RPM: " + aux);
     }
 }

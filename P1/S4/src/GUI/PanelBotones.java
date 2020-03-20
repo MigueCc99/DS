@@ -10,6 +10,9 @@
  */
 package GUI;
 
+import s4.EstadoMotor;
+import s4.Objetivo;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
@@ -23,6 +26,7 @@ import javax.swing.JButton;
 import javax.swing.BoxLayout;
 import javax.swing.border.*;
 import javax.swing.SwingConstants;
+import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 public class PanelBotones extends JFrame {
     private JButton BotonAcelerar;
@@ -31,8 +35,9 @@ public class PanelBotones extends JFrame {
     private JPanel pb1;
     private JPanel pb2;
     private JLabel Estado;
+    private Objetivo obj;
     
-    public PanelBotones () {
+    public PanelBotones (Objetivo obj) {
         setSize(400,100);
         setMinimumSize(new Dimension(200,100));
         inicializar();
@@ -40,6 +45,8 @@ public class PanelBotones extends JFrame {
         setTitle("CONTROL DE MOVIMIENTO");
         setLocation(100,100);
         setVisible(true);
+        
+        this.obj = obj;
     }
     
     private void inicializar () {
@@ -79,18 +86,72 @@ public class PanelBotones extends JFrame {
         pb2.add(BotonFrenar);   
         
         BotonEncender = new JButton();
-        BotonEncender.setText("FRENAR");
+        BotonEncender.setText("ENCENDER");
         BotonEncender.setForeground(Color.GREEN);
         BotonEncender.setFont(new Font("arial", Font.BOLD, 15));
         pb2.add(BotonEncender);  
+        
+        gestionarEventos();
     }
     
     private void gestionarEventos () {
         ActionListener al1 = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae){
-                
+                if (BotonEncender.getText() != "APAGAR"){
+                    BotonEncender.setText("APAGAR");
+                    BotonEncender.setForeground(Color.RED);
+                    Estado.setText("ENCENDIDO");
+                    obj.setEstado(EstadoMotor.ENCENDIDO);
+                }else{
+                    BotonEncender.setText("ENCENDER");
+                    BotonEncender.setForeground(Color.GREEN);
+                    Estado.setText("APAGADO");
+                    obj.setEstado(EstadoMotor.APAGADO);
+                }
             }
         };
+        
+        BotonEncender.addActionListener(al1);
+        
+        ActionListener al2 = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae){
+                if(Estado.getText() == "ENCENDIDO"){
+                    BotonAcelerar.setText("Soltar acelerador");
+                    BotonAcelerar.setForeground(Color.RED);
+                    Estado.setText("ACELERANDO");
+                    obj.setEstado(EstadoMotor.ACELERANDO);
+                }
+                else if (Estado.getText() == "ACELERANDO"){
+                    BotonAcelerar.setText("ACELERAR");
+                    BotonAcelerar.setForeground(Color.BLACK);
+                    Estado.setText("ENCENDIDO");
+                    obj.setEstado(EstadoMotor.ENCENDIDO);
+                }
+            }
+        };
+        
+        BotonAcelerar.addActionListener(al2);
+
+        ActionListener al3 = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae){
+                if(Estado.getText() == "ENCENDIDO"){
+                    BotonFrenar.setText("Soltar freno");
+                    BotonFrenar.setForeground(Color.RED);
+                    Estado.setText("FRENANDO");
+                    obj.setEstado(EstadoMotor.FRENANDO);
+                }
+                else if (Estado.getText() == "FRENANDO"){
+                    BotonFrenar.setText("FRENAR");
+                    BotonFrenar.setForeground(Color.BLACK);
+                    Estado.setText("ENCENDIDO");  
+                    obj.setEstado(EstadoMotor.ENCENDIDO);
+                }
+            }
+        };
+        
+        BotonFrenar.addActionListener(al3);
     }
 }

@@ -16,8 +16,8 @@ import GUI.PanelBotones;
 public class S4 {
 
     public static void main(String[] args) {
+        
         Salpicadero salpicadero = new Salpicadero();
-        PanelBotones panelBotones = new PanelBotones();
         
         GestorFiltros gestorFiltros = new GestorFiltros();
         
@@ -34,6 +34,8 @@ public class S4 {
         cliente.setObjetivo(obj);
         
         gestorFiltros.setObjetivo(obj);
+        
+        PanelBotones panelBotones = new PanelBotones(obj);
         
         Thread t1 = new Thread(cliente);
         t1.start();

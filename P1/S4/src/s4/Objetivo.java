@@ -18,25 +18,33 @@ public class Objetivo {
     private double velocidadLineal;
     private double velocidadAngular;
     private double distancia; 
+    private EstadoMotor estado;
     private Salpicadero salpicadero;
     
     public Objetivo (Salpicadero s) {
+        estado = EstadoMotor.APAGADO;
         salpicadero = s;
         velocidadLineal = 0.0;
         velocidadAngular = 0.0;
         distancia = 0.0;
     }
     
-    public double getVelocidadAngular() {
+    public double getVelocidadAngular () {
         return velocidadAngular;
+    }
+    
+    public EstadoMotor getEstado () {
+        return estado;
+    }
+    
+    public void setEstado (EstadoMotor estado) {
+        this.estado = estado;
     }
     
     public void ejecutar (double revoluciones, EstadoMotor estado) {
         velocidadAngular = revoluciones;
-        velocidadLineal = 2*Math.PI*radio*velocidadAngular*(60/1000);
+        velocidadLineal = 2*Math.PI*radio*velocidadAngular*0.006;
         distancia += velocidadLineal * tiempo ;
-        
-        //System.out.println("RPM: " + velocidadAngular + " VL: " + velocidadLineal + " Distancia: " + distancia);
         update();
     }
     

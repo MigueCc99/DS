@@ -50,7 +50,10 @@ public class CalcularVelocidad implements Filtro {
     public double ejecutar (double revoluciones, EstadoMotor estado) {
         modificarIncremento(revoluciones, estado);
         
-        revoluciones = revoluciones + incrementoVelocidad;
+        if(estado != EstadoMotor.APAGADO)
+            revoluciones = revoluciones + incrementoVelocidad;
+        else
+            revoluciones = 0;
         
         return revoluciones;
     }
