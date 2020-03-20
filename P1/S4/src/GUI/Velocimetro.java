@@ -58,5 +58,9 @@ public class Velocimetro extends JPanel {
         velocidadLineal.setFont(new Font("arial", Font.ITALIC, 15));
         p.add(velocidadLineal);   
     }
+    
+    public void update (double velocidadLineal) {
+        this.velocidadLineal.setText(String.valueOf(velocidadLineal));
+    }
 
 }

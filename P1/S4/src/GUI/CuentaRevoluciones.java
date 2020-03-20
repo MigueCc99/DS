@@ -58,4 +58,8 @@ public class CuentaRevoluciones extends JPanel {
         rev.setFont(new Font("arial", Font.ITALIC, 15));
         p.add(rev);   
     }    
+    
+    public void update (double velocidadAngular) {
+        rev.setText(String.valueOf(velocidadAngular));
+    }
 }

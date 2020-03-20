@@ -59,4 +59,10 @@ public class Salpicadero extends JFrame {
       titulo.setFont(new Font("arial", Font.BOLD, 20));     
       panelPrincipal.add(titulo);   
     }
+    
+    public void update (double velocidadLineal, double velocidadAngular, double distancia){
+        velocimetro.update(velocidadLineal);
+        cuentaKilometros.update(distancia);
+        cuentaRevoluciones.update(velocidadAngular);
+    }
 }

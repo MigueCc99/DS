@@ -28,10 +28,60 @@ public class PanelBotones extends JFrame {
     private JButton BotonAcelerar;
     private JButton BotonEncender;
     private JButton BotonFrenar;
+    private JPanel pb1;
+    private JPanel pb2;
     private JLabel Estado;
     
     public PanelBotones () {
-        
+        setSize(400,100);
+        setMinimumSize(new Dimension(200,100));
+        inicializar();
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setTitle("CONTROL DE MOVIMIENTO");
+        setLocation(100,100);
+        setVisible(true);
     }
     
+    private void inicializar () {
+        inicializarPanelSuperior();
+        inicializarPanelInferior();
+        setLayout(new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS));
+        this.add(pb1);
+        this.add(pb2);
+    }
+    
+    private void inicializarPanelSuperior () {
+        pb1 = new JPanel();
+        pb1.setLayout(new BoxLayout(pb1,BoxLayout.X_AXIS));
+
+        Estado = new JLabel();
+        Estado.setText("APAGADO");
+        Estado.setHorizontalAlignment(SwingConstants.CENTER);
+        Estado.setForeground(Color.RED);
+        Estado.setFont(new Font("arial", Font.BOLD, 15));
+        pb1.add(Estado);                
+    }
+    
+    private void inicializarPanelInferior () {
+        pb2 = new JPanel();
+        pb2.setLayout(new BoxLayout(pb2,BoxLayout.X_AXIS));
+        
+        BotonAcelerar = new JButton();
+        BotonAcelerar.setText("ACELERAR");
+        BotonAcelerar.setForeground(Color.BLACK);
+        BotonAcelerar.setFont(new Font("arial", Font.BOLD, 15));
+        pb2.add(BotonAcelerar);
+        
+        BotonFrenar = new JButton();
+        BotonFrenar.setText("FRENAR");
+        BotonFrenar.setForeground(Color.BLACK);
+        BotonFrenar.setFont(new Font("arial", Font.BOLD, 15));
+        pb2.add(BotonFrenar);   
+        
+        BotonEncender = new JButton();
+        BotonEncender.setText("FRENAR");
+        BotonEncender.setForeground(Color.GREEN);
+        BotonEncender.setFont(new Font("arial", Font.BOLD, 15));
+        pb2.add(BotonEncender);  
+    }
 }

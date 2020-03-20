@@ -78,4 +78,9 @@ public class CuentaKilometros extends JPanel {
         t.setFont(new Font("arial", Font.ITALIC, 15));
         p.add(t); 
     }
+    
+    public void update (double distancia){
+        r.setText(String.valueOf(distancia));
+        t.setText(String.valueOf(distancia));
+    }
 }

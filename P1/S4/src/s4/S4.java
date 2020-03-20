@@ -11,11 +11,13 @@
 package s4;
 
 import GUI.Salpicadero;
+import GUI.PanelBotones;
 
 public class S4 {
 
     public static void main(String[] args) {
         Salpicadero salpicadero = new Salpicadero();
+        PanelBotones panelBotones = new PanelBotones();
     }
     
 }
