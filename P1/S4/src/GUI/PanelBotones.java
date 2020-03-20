@@ -84,4 +84,13 @@ public class PanelBotones extends JFrame {
         BotonEncender.setFont(new Font("arial", Font.BOLD, 15));
         pb2.add(BotonEncender);  
     }
+    
+    private void gestionarEventos () {
+        ActionListener al1 = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae){
+                
+            }
+        };
+    }
 }

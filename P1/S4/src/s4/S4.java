@@ -18,6 +18,23 @@ public class S4 {
     public static void main(String[] args) {
         Salpicadero salpicadero = new Salpicadero();
         PanelBotones panelBotones = new PanelBotones();
+        
+        GestorFiltros gestorFiltros = new GestorFiltros();
+        
+        Filtro fCalcularVelocidad = new CalcularVelocidad();
+        Filtro fRepercutirRozamiento = new RepercutirRozamiento();
+        
+        gestorFiltros.addFiltro(fCalcularVelocidad);
+        gestorFiltros.addFiltro(fRepercutirRozamiento);
+        
+        Cliente cliente = new Cliente (gestorFiltros);
+        
+        Objetivo obj = new Objetivo (salpicadero);
+        
+        gestorFiltros.setObjetivo(obj);
+        
+        Thread t1 = new Thread(cliente);
+        t1.start();
     }
     
 }

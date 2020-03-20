@@ -10,7 +10,7 @@
  */
 package s4;
 
-public class Cliente {
+public class Cliente implements Runnable {
     private GestorFiltros gestorFiltros;
     
     public Cliente (GestorFiltros gf) {
@@ -20,4 +20,21 @@ public class Cliente {
     public void solicitar (double revoluciones, EstadoMotor estado){
         gestorFiltros.solicitarFiltro(revoluciones, estado);
     }
-}
+    
+    @Override 
+    public void run() {
+        Integer milesimas = 0;
+        while (true){    
+            try {
+                Thread.sleep(4);
+                if(milesimas % 1000 == 0){
+                    solicitar(100,EstadoMotor.ACELERANDO);
+                    milesimas = 0;
+                }
+            } catch(java.lang.InterruptedException e){
+                e.printStackTrace();
+            }   
+        }
+    }
+}    
+

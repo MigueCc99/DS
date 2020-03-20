@@ -21,6 +21,10 @@ public class GestorFiltros {
         cadenaFiltros.addFiltro(f);
     }
     
+    public void setObjetivo (Objetivo obj){
+        cadenaFiltros.setObjetivo(obj);
+    }
+    
     public void solicitarFiltro (double revoluciones, EstadoMotor estado) {
         cadenaFiltros.ejecutar(revoluciones, estado);
     }

@@ -22,7 +22,7 @@ public class RepercutirRozamiento implements Filtro {
     @Override 
     public double ejecutar (double revoluciones, EstadoMotor estado) {
         if (estado != EstadoMotor.APAGADO && estado != EstadoMotor.ENCENDIDO){
-            if(revoluciones-rozamiento >= minRev)
+            if(revoluciones-rozamiento > minRev)
                 revoluciones -= rozamiento;
         }
         return revoluciones;

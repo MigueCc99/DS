@@ -29,9 +29,11 @@ public class CadenaFiltros {
     }
     
     public void ejecutar (double revoluciones, EstadoMotor estado) {
-        double aux = 0.0;
+        double aux;
+        aux = revoluciones;
         for(int i=0; i<filtros.size(); i++)
-            aux += filtros.get(i).ejecutar(revoluciones, estado);
+            aux = filtros.get(i).ejecutar(aux, estado);
         obj.ejecutar(aux, estado);
+        System.out.println("RPM: " + aux);
     }
 }

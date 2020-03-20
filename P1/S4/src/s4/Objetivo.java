@@ -20,7 +20,8 @@ public class Objetivo {
     private double distancia; 
     private Salpicadero salpicadero;
     
-    public Objetivo () {
+    public Objetivo (Salpicadero s) {
+        salpicadero = s;
         velocidadLineal = 0.0;
         velocidadAngular = 0.0;
         distancia = 0.0;
@@ -30,6 +31,8 @@ public class Objetivo {
         velocidadAngular = revoluciones;
         velocidadLineal = 2*Math.PI*radio*velocidadAngular*(60/1000);
         distancia += velocidadLineal * tiempo ;
+        
+        //System.out.println("RPM: " + velocidadAngular + " VL: " + velocidadLineal + " Distancia: " + distancia);
         update();
     }
     
