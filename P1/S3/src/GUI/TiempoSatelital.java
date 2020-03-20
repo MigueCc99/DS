@@ -56,7 +56,7 @@ public class TiempoSatelital extends JFrame implements Observer {
       //panel.setBackground(Color.BLUE);                    // Cambiamos el color al panel
       
       TCgranada = new JLabel("0 ºC", SwingConstants.CENTER);
-      TCgranada.setBounds(300,495,30,20);
+      TCgranada.setBounds(300,495,50,20);
       TCgranada.setForeground(Color.BLACK);
       TCgranada.setOpaque(rootPaneCheckingEnabled);
       TCgranada.setBackground(Color.WHITE); 
@@ -64,21 +64,21 @@ public class TiempoSatelital extends JFrame implements Observer {
       
       
       TCmadrid = new JLabel("0 ºC", SwingConstants.CENTER);
-      TCmadrid.setBounds(295,305,30,20);
+      TCmadrid.setBounds(295,305,50,20);
       TCmadrid.setForeground(Color.BLACK);
       TCmadrid.setOpaque(rootPaneCheckingEnabled);
       TCmadrid.setBackground(Color.WHITE); 
       panel.add(TCmadrid);
       
       TCzaragoza = new JLabel("0 ºC", SwingConstants.CENTER);
-      TCzaragoza.setBounds(420,230,30,20);
+      TCzaragoza.setBounds(420,230,50,20);
       TCzaragoza.setForeground(Color.BLACK);
       TCzaragoza.setOpaque(rootPaneCheckingEnabled);
       TCzaragoza.setBackground(Color.WHITE); 
       panel.add(TCzaragoza);
       
       TCoviedo = new JLabel("0 ºC", SwingConstants.CENTER);
-      TCoviedo.setBounds(195,115,30,20);
+      TCoviedo.setBounds(195,115,50,20);
       TCoviedo.setForeground(Color.BLACK);
       TCoviedo.setOpaque(rootPaneCheckingEnabled);
       TCoviedo.setBackground(Color.WHITE); 
