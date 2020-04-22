@@ -10,7 +10,8 @@
  */
 package scacv;
 
-import GUI.Salpicadero;
+
+import GUI.Scacv;
 
 public class Objetivo {
     private static double radio = 0.15;
@@ -32,16 +33,15 @@ public class Objetivo {
     private double revolucionesRevisionDesdeRevision;
     
     private EstadoMotor estado;
-    private Salpicadero salpicadero;
+    private Scacv scacv;
     
-    public Objetivo (Salpicadero s) {
+    public Objetivo () {
         estado = EstadoMotor.APAGADO;
-        salpicadero = s;
         velocidadLineal = 0.0;
         velocidadAngular = 0.0;
         distancia = 0.0;
         automatica = 0.0;
-        combustible = 0.0;
+        combustible = 500.0;
     }
     
     public double getVelocidadAngular () {
@@ -56,12 +56,32 @@ public class Objetivo {
         return automatica;
     }
     
+    public double getVelocidadLineal () {
+        return velocidadLineal;
+    }
+    
+    public double getDistancia (){
+        return distancia;
+    }
+    
+    public double getCombustible (){
+        return combustible;
+    }
+    
     public void setEstado (EstadoMotor estado) {
         this.estado = estado;
     }
     
     public void setAutomatica (double revoluciones) {
         this.automatica = revoluciones;
+    }
+    
+    public void setScacv (Scacv s){
+        scacv = s;
+    }
+    
+    public void setCombustible (double c){
+        combustible = c;
     }
     
     public void calcularConsumoCombustible (double r) {
@@ -124,11 +144,5 @@ public class Objetivo {
         consumirAceite(revoluciones);
         consumirPastillas(revoluciones);
         consumirRevision(revoluciones);
-        update();
-    }
-    
-    public void update (){
-        salpicadero.update(velocidadLineal, velocidadAngular, distancia);
-    }
-    
+    } 
 }

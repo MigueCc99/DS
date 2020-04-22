@@ -17,14 +17,14 @@ public class CalcularVelocidad implements Filtro {
     public CalcularVelocidad () {
         incrementoVelocidad = 0;
         minRev = 0;
-        maxRev = 5000;       
+        maxRev = 10000;       
     }    
     
     private void modificarIncremento (double revoluciones, EstadoMotor estado, double automatica) {
         if (estado == EstadoMotor.ACELERANDO){
-            double aux = revoluciones + 100;
+            double aux = revoluciones + 500;
             if(aux < maxRev) {
-                incrementoVelocidad = 100;
+                incrementoVelocidad = 500;
             }
             else{
                 incrementoVelocidad = 0;
@@ -32,18 +32,18 @@ public class CalcularVelocidad implements Filtro {
                 
         }
         else if (estado == EstadoMotor.FRENANDO){
-            double aux = revoluciones - 100;
+            double aux = revoluciones - 500;
             if(aux > minRev) {
-                incrementoVelocidad = -100;
+                incrementoVelocidad = -500;
             }
             else{
                 incrementoVelocidad = 0;
             }  
         }
         else if (estado == EstadoMotor.ACELERANDOAUTOMÁTICO){
-            double aux = revoluciones + 100;
+            double aux = revoluciones + 500;
             if(aux < maxRev) {
-                incrementoVelocidad = 100;
+                incrementoVelocidad = 500;
             }
             else{
                 incrementoVelocidad = 0;

@@ -29,6 +29,9 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 
 import eu.hansolo.steelseries.gauges.Radial;
+import scacv.EstadoMotor;
+
+import scacv.Objetivo;
 
 public class Scacv extends JPanel implements Runnable{
     
@@ -56,20 +59,22 @@ public class Scacv extends JPanel implements Runnable{
     private JToggleButton onOff;
     private JToggleButton freno;
     private JToggleButton acelerador;
-    private JToggleButton cambioAceite;
-    private JToggleButton cambioPastillas;
-    private JToggleButton revisionMotor;
     private JRadioButton acelerar;
     private JRadioButton parar;
     private JRadioButton mantener;
     private JRadioButton reiniciar;
+    private JButton cambioAceite;
+    private JButton cambioPastillas;
+    private JButton revisionMotor;    
     private JButton repostar;
     
     private Radial gauge;
+    
+    private Objetivo obj;
         
     public Thread thr;
     
-    public Scacv (){
+    public Scacv (Objetivo o){
         setSize(1000, 700);
         setBackground(Color.WHITE);
         
@@ -91,9 +96,9 @@ public class Scacv extends JPanel implements Runnable{
         onOff = new JToggleButton("Encendido / Apagado", false);
         acelerador = new JToggleButton("Acelerador", false);
         freno = new JToggleButton("Freno", false);
-        cambioAceite = new JToggleButton("Cambiar Aceite", false);
-        cambioPastillas = new JToggleButton("Cambiar Pastillas", false);
-        revisionMotor = new JToggleButton("Revisar Motor", false);
+        cambioAceite = new JButton("Cambiar Aceite");
+        cambioPastillas = new JButton("Cambiar Pastillas");
+        revisionMotor = new JButton("Revisar Motor");
         acelerar = new JRadioButton("Acelerar", false);
         parar = new JRadioButton("Parar", false);
         mantener = new JRadioButton("Mantener", false);
@@ -104,6 +109,8 @@ public class Scacv extends JPanel implements Runnable{
         gauge.setBounds(WIDTH, WIDTH, 300, 300);
         gauge.setTitle("Velocímetro");
         gauge.setUnitString("KM/H");
+        
+        obj = o;
         
         panelSpeedometer = new JPanel();
         panelSpeedometer.setBackground(Color.WHITE);
@@ -165,17 +172,153 @@ public class Scacv extends JPanel implements Runnable{
         panel.add(panelMecanico);
         panelMecanico.add(cambioAceite);
         panelMecanico.add(cambioPastillas);
-        panelMecanico.add(revisionMotor);
-                
+        panelMecanico.add(revisionMotor);  
+        
+        gestionarEventos();     
+        
         thr = new Thread(this);
+    }
+    
+    private void gestionarEventos(){
+
+        onOff.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(obj.getEstado() == EstadoMotor.APAGADO){
+                    obj.setEstado(EstadoMotor.ENCENDIDO);
+                    acelerador.setSelected(false);
+                    freno.setSelected(false);
+                    acelerar.setSelected(false);
+                    parar.setSelected(false);
+                    reiniciar.setSelected(false);
+                    mantener.setSelected(false);
+                }
+                else{
+                    obj.setEstado(EstadoMotor.APAGADO);
+                }
+            }
+        });
+       
+        acelerador.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(obj.getEstado() == EstadoMotor.ENCENDIDO){
+                    obj.setEstado(EstadoMotor.ACELERANDO);
+                }
+                else if(obj.getEstado() == EstadoMotor.ACELERANDO){
+                    obj.setEstado(EstadoMotor.ENCENDIDO);
+                }
+            }
+        });
+
+        freno.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(obj.getEstado() == EstadoMotor.ENCENDIDO){
+                    obj.setEstado(EstadoMotor.FRENANDO);
+                }
+                else if(obj.getEstado() == EstadoMotor.FRENANDO){
+                    obj.setEstado(EstadoMotor.ENCENDIDO);
+                }
+            }
+        }); 
+        
+        acelerar.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                obj.setEstado(EstadoMotor.ACELERANDOAUTOMÁTICO);
+                acelerador.setSelected(false);
+                freno.setSelected(false);
+                parar.setSelected(false);
+                reiniciar.setSelected(false);
+                mantener.setSelected(false);
+            }
+        });   
+        
+        parar.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                obj.setEstado(EstadoMotor.APAGADO);
+                acelerador.setSelected(false);
+                freno.setSelected(false);
+                acelerar.setSelected(false);
+                reiniciar.setSelected(false);
+                mantener.setSelected(false);
+            }
+        });
+        
+        reiniciar.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                obj.setEstado(EstadoMotor.APAGADO);
+                acelerador.setSelected(false);
+                freno.setSelected(false);
+                acelerar.setSelected(false);
+                parar.setSelected(false);
+                mantener.setSelected(false);
+            }
+        });   
+        
+        mantener.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                obj.setEstado(EstadoMotor.MANTENIENDOAUTOMÁTICO);
+                obj.setAutomatica(obj.getVelocidadLineal());
+                acelerador.setSelected(false);
+                freno.setSelected(false);
+                acelerar.setSelected(false);
+                reiniciar.setSelected(false);
+                parar.setSelected(false);
+            }
+        });   
+        
+        cambioAceite.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                obj.cambiarAceite();
+            }
+        });   
+        
+        cambioPastillas.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                obj.cambiarPastillas();
+            }
+        });          
+ 
+        revisionMotor.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                obj.cambiarRevision();
+            }
+        });                
+      
+        repostar.addActionListener(new java.awt.event.ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                obj.setCombustible(500);
+            }
+        });   
+ 
+    }
+    
+    private void gestionarInfo (){
+        velocidad.setText("Velocidad: " + roundAvoid(obj.getVelocidadLineal(),2) + " km/h");
+        distancia.setText("Distancia recorrida: " + roundAvoid(obj.getDistancia(),2) + " km");
+        velocidadAuto.setText("Velocidad Automática: " + roundAvoid(obj.getAutomatica(),2) + " km/h");
+        combustible.setText("Combustible: " + roundAvoid(obj.getCombustible(),2));
+        estado.setText(obj.getEstado().toString());     
+        gauge.setValue(obj.getVelocidadLineal());
     }
     
     public void run() {
         while(true){
-            velocidad.setText("Velocidad: " + 0.0 + " km/h");
-            distancia.setText("Distancia recorrida: " + 0.0 + " km");
-            velocidadAuto.setText("Velocidad Automática: " + 0.0 + " km/h");
-            combustible.setText("Combustible: " + 0);
+            gestionarInfo();
         }
+    }
+    
+    public static double roundAvoid(double value, int places) {
+        double scale = Math.pow(10, places);
+        return Math.round(value * scale) / scale;
     }
 }

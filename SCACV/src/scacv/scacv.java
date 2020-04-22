@@ -19,11 +19,32 @@ import GUI.Scacv;
 public class scacv extends JApplet{
 
     public void init(){
-        setSize(1000, 700);
-        Scacv scacv = new Scacv();
+        setSize(1000, 700);   
+        
+        GestorFiltros gestorFiltros = new GestorFiltros();
+        
+        Filtro fCalcularVelocidad = new CalcularVelocidad();
+        Filtro fRepercutirRozamiento = new RepercutirRozamiento();
+        
+        gestorFiltros.addFiltro(fCalcularVelocidad);
+        gestorFiltros.addFiltro(fRepercutirRozamiento);
+        
+        Cliente cliente = new Cliente (gestorFiltros);
+        
+        Objetivo obj = new Objetivo ();  
+        
+        cliente.setObjetivo(obj);
+        
+        gestorFiltros.setObjetivo(obj);
+        
+        Scacv scacv = new Scacv(obj);  
         add(scacv); 
         
+        obj.setScacv(scacv);
+        
         scacv.thr.start();
+        Thread t1 = new Thread(cliente);
+        t1.start();
     }
 /*   
     public static void main(String[] args) {
