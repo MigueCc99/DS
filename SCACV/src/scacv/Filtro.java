@@ -11,5 +11,5 @@
 package scacv;
 
 public interface Filtro {
-    public double ejecutar (double revoluciones, EstadoMotor estado);
+    public double ejecutar (double revoluciones, EstadoMotor estado, double automatica);
 }

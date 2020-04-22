@@ -28,11 +28,11 @@ public class CadenaFiltros {
         this.obj = obj;
     }
     
-    public void ejecutar (double revoluciones, EstadoMotor estado) {
+    public void ejecutar (double revoluciones, EstadoMotor estado, double automatica) {
         double aux;
         aux = revoluciones;
         for(int i=0; i<filtros.size(); i++)
-            aux = filtros.get(i).ejecutar(aux, estado);
+            aux = filtros.get(i).ejecutar(aux, estado, automatica);
         obj.ejecutar(aux, estado);
     }
 }

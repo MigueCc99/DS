@@ -21,8 +21,8 @@ public class Cliente implements Runnable {
         gestorFiltros = gf;
     }
     
-    public void solicitar (double revoluciones, EstadoMotor estado){
-        gestorFiltros.solicitarFiltro(revoluciones, estado);
+    public void solicitar (double revoluciones, EstadoMotor estado, double automatica){
+        gestorFiltros.solicitarFiltro(revoluciones, estado, automatica);
     }
     
     public void setObjetivo (Objetivo o) {
@@ -37,7 +37,7 @@ public class Cliente implements Runnable {
                 Thread.sleep(4);
                 milesimas += 4;
                 if(milesimas % 1000 == 0){
-                    solicitar(obj.getVelocidadAngular(), obj.getEstado());
+                    solicitar(obj.getVelocidadAngular(), obj.getEstado(), obj.getAutomatica());
                     milesimas = 0;
                 }
             } catch(java.lang.InterruptedException e){
