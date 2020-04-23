@@ -15,7 +15,7 @@ public class RepercutirRozamiento implements Filtro {
     private double minRev;            
     
     public RepercutirRozamiento () {
-        rozamiento = 1;
+        rozamiento = 10;
         minRev = 0;
     }
     

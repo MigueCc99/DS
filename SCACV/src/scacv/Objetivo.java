@@ -20,6 +20,7 @@ public class Objetivo {
     private double velocidadAngular;
     private double distancia; 
     private double automatica;
+    private double velocidadLinealAutomatica;
     
     private double combustible;
     
@@ -41,6 +42,7 @@ public class Objetivo {
         velocidadAngular = 0.0;
         distancia = 0.0;
         automatica = 0.0;
+        velocidadLinealAutomatica = 0.0;
         combustible = 500.0;
     }
     
@@ -68,6 +70,10 @@ public class Objetivo {
         return combustible;
     }
     
+    public double getVelocidadLinealAutomatica () {
+        return velocidadLinealAutomatica;
+    }
+    
     public void setEstado (EstadoMotor estado) {
         this.estado = estado;
     }
@@ -82,6 +88,10 @@ public class Objetivo {
     
     public void setCombustible (double c){
         combustible = c;
+    }
+    
+    public void calcularVelocidadLinealAutomatica (double automatica) {
+        this.velocidadLinealAutomatica = 2*Math.PI*radio*automatica*0.006;
     }
     
     public void calcularConsumoCombustible (double r) {

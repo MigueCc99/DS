@@ -263,7 +263,8 @@ public class Scacv extends JPanel implements Runnable{
             @Override
             public void actionPerformed(ActionEvent e) {
                 obj.setEstado(EstadoMotor.MANTENIENDOAUTOMÁTICO);
-                obj.setAutomatica(obj.getVelocidadLineal());
+                obj.setAutomatica(obj.getVelocidadAngular());
+                obj.calcularVelocidadLinealAutomatica(obj.getAutomatica());
                 acelerador.setSelected(false);
                 freno.setSelected(false);
                 acelerar.setSelected(false);
@@ -305,7 +306,7 @@ public class Scacv extends JPanel implements Runnable{
     private void gestionarInfo (){
         velocidad.setText("Velocidad: " + roundAvoid(obj.getVelocidadLineal(),2) + " km/h");
         distancia.setText("Distancia recorrida: " + roundAvoid(obj.getDistancia(),2) + " km");
-        velocidadAuto.setText("Velocidad Automática: " + roundAvoid(obj.getAutomatica(),2) + " km/h");
+        velocidadAuto.setText("Velocidad Automática: " + roundAvoid(obj.getVelocidadLinealAutomatica(),2) + " km/h");
         combustible.setText("Combustible: " + roundAvoid(obj.getCombustible(),2));
         estado.setText(obj.getEstado().toString());     
         gauge.setValue(obj.getVelocidadLineal());
