@@ -10,12 +10,9 @@
  */
 package scacv;
 
-import GUI.PanelBotones;
-
 public class Cliente implements Runnable {
     private GestorFiltros gestorFiltros;
     private Objetivo obj;
-    private PanelBotones pb;
     
     public Cliente (GestorFiltros gf) {
         gestorFiltros = gf;

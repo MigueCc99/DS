@@ -12,8 +12,6 @@ package scacv;
 
 import javax.swing.JApplet;
 
-import GUI.Salpicadero;
-import GUI.PanelBotones;
 import GUI.Scacv;
 
 public class scacv extends JApplet{
@@ -46,33 +44,4 @@ public class scacv extends JApplet{
         Thread t1 = new Thread(cliente);
         t1.start();
     }
-/*   
-    public static void main(String[] args) {
-
-        init();
-        
-        Salpicadero salpicadero = new Salpicadero();
-        
-        GestorFiltros gestorFiltros = new GestorFiltros();
-        
-        Filtro fCalcularVelocidad = new CalcularVelocidad();
-        Filtro fRepercutirRozamiento = new RepercutirRozamiento();
-        
-        gestorFiltros.addFiltro(fCalcularVelocidad);
-        gestorFiltros.addFiltro(fRepercutirRozamiento);
-        
-        Cliente cliente = new Cliente (gestorFiltros);
-        
-        Objetivo obj = new Objetivo (salpicadero);
-        
-        cliente.setObjetivo(obj);
-        
-        gestorFiltros.setObjetivo(obj);
-        
-        PanelBotones panelBotones = new PanelBotones(obj);
-        
-        Thread t1 = new Thread(cliente);
-        t1.start();
-    }
-*/   
 }
