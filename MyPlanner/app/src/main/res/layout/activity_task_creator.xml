@@ -7,7 +7,7 @@
     tools:context=".TaskCreator">
 
     <TextView
-        android:id="@+id/cr_event"
+        android:id="@+id/create_task"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
@@ -23,12 +23,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginTop="36dp"
-        android:autofillHints=""
         android:ems="10"
         android:hint="@string/cr_name_String"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cr_event" />
+        app:layout_constraintTop_toBottomOf="@+id/create_task"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/cr_description"
@@ -36,12 +36,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginTop="36dp"
-        android:autofillHints=""
         android:ems="10"
         android:hint="@string/cr_description_String"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cr_name" />
+        app:layout_constraintTop_toBottomOf="@+id/cr_name"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/cr_date"
@@ -49,18 +49,21 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginTop="36dp"
-        android:autofillHints=""
         android:ems="10"
         android:hint="@string/cr_date_String"
-        android:inputType="date"
+        android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cr_description" />
+        app:layout_constraintTop_toBottomOf="@+id/cr_description"
+        android:autofillHints="" />
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="353dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="334dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="36dp"
+        android:background="#9C27B0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cr_date" />
@@ -71,8 +74,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginTop="36dp"
+        android:backgroundTint="#2196F3"
         android:onClick="create"
-        android:text="@string/create"
+        android:text="@string/cr_task_String"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner" />
 

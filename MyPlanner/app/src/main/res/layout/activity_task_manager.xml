@@ -6,14 +6,4 @@
     android:layout_height="match_parent"
     tools:context=".TaskManager">
 
-    <Button
-        android:id="@+id/create_task"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="100dp"
-        android:onClick="goToTaskCreator"
-        android:text="@string/create_task_String"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

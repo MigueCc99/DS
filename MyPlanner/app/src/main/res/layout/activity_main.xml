@@ -7,13 +7,25 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/task_manager"
+        android:id="@+id/tk_creator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="340dp"
-        android:onClick="goToTaskManager"
-        android:text="@string/task_manager_String"
+        android:layout_marginStart="145dp"
+        android:layout_marginTop="250dp"
+        android:onClick="goToTaskCreator"
+        android:text="@string/tk_creator"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="145dp"
+        android:layout_marginBottom="250dp"
+        android:text="@string/tk_manager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tk_creator"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,25 +6,28 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+/*
+    Class: MainActivity.
+    Description: Main activity de nuestro programa. Enlazará con el creador de tareas y el manager de las mismas, que interactuará con la BD(database).
+    Author: Miguel Ángel Campos Cubillas
+ */
+
 public class MainActivity extends AppCompatActivity {
-    private Manager manager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        init();
     }
 
-    private void init (){
-        this.manager = new Manager();
+    public void goToTaskCreator(View view){
+        Intent goToTaskCr = new Intent(this, TaskCreator.class);
+        startActivity(goToTaskCr);
     }
-
+/*
     public void goToTaskManager(View view){
-        Intent goToTaskMg = new Intent (this, TaskManager.class);
-        Bundle bundle = new Bundle();
-        bundle.putSerializable("manager", manager);
-        goToTaskMg.putExtras(bundle);
+        Intent goToTaskMg = new Intent(this, TaskManager.class);
         startActivity(goToTaskMg);
     }
+ */
 }
