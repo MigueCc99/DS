@@ -1,30 +1,27 @@
 package com.ds.myplanner;
-
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import androidx.annotation.Nullable;
 
 /*
-    Class: AdminSQLiteOpenHelper
-    Description: SGBD de la bd referente a las tareas (task)
+    Class: AdminSQLiteOpenHelper.
+    Description: Representa el SGBD de la app.
     Author: Miguel Ángel Campos Cubillas
  */
 
-public class AdminSQLiteOpenHelper extends SQLiteOpenHelper{
-
-    public AdminSQLiteOpenHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
+public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
+    public AdminSQLiteOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
 
     @Override
     public void onCreate(SQLiteDatabase database) {
-        database.execSQL("create table tasks(name varchar primary key, description varchar, date varchar, priority varchar)");
+        database.execSQL("create table tasks(name text primary key, description text, date text, priority text)");
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase database, int oldVersion, int newVersion) {
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
     }
 }

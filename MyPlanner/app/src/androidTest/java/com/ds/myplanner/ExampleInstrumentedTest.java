@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("com.ds.myplanner", appContext.getPackageName());
+        assertEquals("com.ds.ultratask", appContext.getPackageName());
     }
 }

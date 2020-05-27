@@ -7,25 +7,27 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/tk_creator"
+        android:id="@+id/tk_manager"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="145dp"
-        android:layout_marginTop="250dp"
-        android:onClick="goToTaskCreator"
-        android:text="@string/tk_creator"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="180dp"
+        android:onClick="goToTaskManager"
+        android:text="@string/tk_manager"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/tk_viewer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="145dp"
-        android:layout_marginBottom="250dp"
-        android:text="@string/tk_manager"
+        android:layout_marginStart="144dp"
+        android:layout_marginBottom="180dp"
+        android:onClick="goToTaskViewer"
+        android:text="@string/tk_viewer"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tk_creator"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/tk_manager"
+        app:layout_constraintVertical_bias="0.996" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

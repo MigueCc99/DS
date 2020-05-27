@@ -9,9 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TaskManager"></activity>
-        <activity android:name=".TaskCreator" />
-        <activity android:name=".MainActivity">
+        <activity android:name="com.ds.myplanner.TaskViewer"></activity>
+        <activity android:name="com.ds.myplanner.TaskManager" />
+        <activity android:name="com.ds.myplanner.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
