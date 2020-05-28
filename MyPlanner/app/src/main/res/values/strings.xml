@@ -10,4 +10,9 @@
     <string name="dl_task_String">Delete</string>
     <string name="mod_task_String">Modify</string>
     <string name="search_task_String">Search</string>
+    <string name="task_viewer_String">Task Viewer</string>
+    <string name="tv_name">Name</string>
+    <string name="tv_description">Description</string>
+    <string name="tv_date">Date</string>
+    <string name="tv_priority">Priority</string>
 </resources>
