@@ -91,6 +91,58 @@ public class TaskManager extends AppCompatActivity {
         }
     }
 
-    public void delete(View view){}
-    public void modify(View view){}
+    public void delete(View view){
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administration", null, 1);
+        SQLiteDatabase database = admin.getWritableDatabase();
+
+        String name = et_name.getText().toString();
+
+        if(!isEmpty(et_date)){
+            int output = database.delete("tasks", "name = '" + name + "'", null);
+            database.close();
+
+            et_name.setText("");
+            et_description.setText("");
+            et_date.setText("");
+
+            if(output == 1){
+                Toast.makeText(this,"Tarea eliminada exitosamente", Toast.LENGTH_SHORT).show();
+            }else{
+                Toast.makeText(this,"La tarea no existe", Toast.LENGTH_SHORT).show();
+            }
+
+
+        }else{
+            Toast.makeText(this,"Debes introducir el nombre de la tarea", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+    public void modify(View view){
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administration", null, 1);
+        SQLiteDatabase database = admin.getWritableDatabase();
+
+        String name = et_name.getText().toString();
+        String description = et_description.getText().toString();
+        String date = et_date.getText().toString();
+        String priority = spinner.getSelectedItem().toString();
+
+        if(!name.isEmpty() && !description.isEmpty() && !date.isEmpty() && !priority.isEmpty()){
+            ContentValues register = new ContentValues();
+            register.put("name", name);
+            register.put("description", description);
+            register.put("date", date);
+            register.put("priority", date);
+
+            int output = (int) database.update("tasks", register, "name = '" + name + "'", null);
+            database.close();
+
+            if(output == 1){
+                Toast.makeText(this,"Tarea modificada exitosamente", Toast.LENGTH_SHORT).show();
+            }else{
+                Toast.makeText(this,"La tarea no existe", Toast.LENGTH_SHORT).show();
+            }
+        }else{
+            Toast.makeText(this,"Debes introducir el nombre de la tarea", Toast.LENGTH_SHORT).show();
+        }
+    }
 }
